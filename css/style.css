@@ -1,0 +1,92 @@
+/* Root variables */
+:root {
+  --bs-primary: #ff5733;       /* Changes default primary color to orange */
+  --bs-body-bg: #f8f9fa;       /* Changes global body background */
+}
+
+/* Components */
+.card {
+  --bs-card-border-radius: 0px;
+  --bs-card-bg: #fffbf0;
+}
+
+/* Custom */
+@font-face {
+  font-family: "BarleyScript";
+  src: url("../fonts/BarleyScript-Regular.otf") format("opentype");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BarleyScriptTextured";
+  src: url("../fonts/BarleyScript-Textured.otf") format("opentype");
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: "FairyPlague";
+  src: url("../fonts/FairyPlague-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+    background-image: url("../images/hardwood.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    background-clip: border-box;
+}
+
+.letter {
+  background-image: url("../images/page_paper.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: border-box;
+  border-radius: 3px;
+  box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.25);
+  font-family: "BarleyScript", cursive;
+  font-size: 24pt;
+  color: #333333;
+  position: relative;
+}
+
+.opener {
+  font-family: "FairyPlague", cursive;
+  font-size: 24pt;
+  transform: rotate(-10deg);
+  padding-bottom: 0px;
+}
+
+.signature {
+  text-align: right;
+  font-family: "BarleyScript", cursive;
+  font-size: 32pt;
+  padding-right: 25px;
+  transform: rotate(2deg);
+}
+
+.tag {
+  background-image: url("../images/page_paper.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: border-box;
+  border-radius: 3px;
+  box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.25);
+  font-family: "FairyPlague", cursive;
+  font-size: 16pt;
+  line-height: normal;
+  color: #262262;
+}
+
+.thumbtack{
+  position: absolute;
+  width:100%;
+  top: 5px;
+  left: 0px;
+  z-index: 10;
+}

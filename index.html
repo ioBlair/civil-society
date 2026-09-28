@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="The website of the video game RavenTable Manor.">
+    <meta name="author" content="Io Blair-Freese">
+
+    <title>RavenTable Manor</title>
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+
+  <body class="fw-light text-secondary">
+    <section>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <!-- <button id="themeToggle" class="btn btn-secondary">Toggle Theme</button> -->
+            </div>
+          </div>
+        </div>
+    </section>
+    <main>
+      <section>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+            </div>
+            <div class="col-12 col-md-7 p-3 m-3">
+              <div class="text-center m-3">
+                <img
+                  src="images/ravencameo.png"
+                  class="img-fluid w-75"
+                  alt="A dashing raven with a top hat sits inside a cameo."
+                >
+              </div>
+
+              <div class="text-start p-4 w-75 mx-auto letter">
+                <div class="thumbtack text-center">
+                  <img
+                    src="images/thumbtack.png"
+                    width="20px"
+                    class="mx-auto"
+                  >
+                </div>
+                <div class="text-center">
+                  <img
+                    src="images/RavenTablemanor_logo.png"
+                    class="img-fluid w-75 m-3"
+                    alt="RavenTable Manor"
+                  >
+                </div>
+                <p class="p-3">
+                  Welcome to RavenTable Manor. <br/>To be successful here, you must always remember to keep things tidy,
+                  follow everything I tell you, and at all times, remain civil. If you
+                  are interested in inquiring about open positions, click here.
+                </p>
+                <p class="signature">— <i>Bella Beeton</i></p>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-4 p-3 m-3">
+              <div class="text-center mb-4">
+              </div>
+              <div class="text-center mb-4">
+                <img src="images/fork.png" class="img-fluid w-75" alt="Fork">
+                <p class="tag w-75 mx-auto">
+                  The fork was introduced to Italy in 1004 A.D. by Byzantine
+                  noblewoman Maria Agripolina.
+                </p>
+              </div>
+
+              <div class="text-center mb-4">
+                <img src="images/spoon.png" class="img-fluid w-75" alt="Spoon">
+                <p class="tag w-75 mx-auto">
+                  Ancient Romans used two spoons: the ligula for soft foods and the
+                  cochleare for eggs and shellfish.
+                </p>
+              </div>
+
+              <div class="text-center mb-4">
+                <img src="images/knife.png" class="img-fluid w-75" alt="Knife">
+                <p class="tag w-75 mx-auto">
+                  King Louis XIV made rounded dinner knives law across France to
+                  reduce brawls and murders.
+                </p>
+              </div>
+            </div>
+            <div class="col">
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      document.getElementById('themeToggle').addEventListener('click', () => {
+      const htmlElement = document.documentElement;
+      const currentTheme = htmlElement.getAttribute('data-bs-theme');
+
+      // Switch the theme attribute
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      htmlElement.setAttribute('data-bs-theme', newTheme);
+      });
+    </script>
+  </body>
+</html>
