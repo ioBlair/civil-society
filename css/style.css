@@ -1,7 +1,7 @@
 /* Root variables */
 :root {
-  --bs-primary: #ff5733;       /* Changes default primary color to orange */
-  --bs-body-bg: #f8f9fa;       /* Changes global body background */
+  --bs-primary: #262262;
+  --bs-link-color: #262262;
 }
 
 /* Components */
@@ -38,6 +38,10 @@ body {
     background-position: center;
     background-repeat: repeat;
     background-clip: border-box;
+}
+
+a {
+    color: #262262;
 }
 
 .letter {
