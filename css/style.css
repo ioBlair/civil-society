@@ -1,15 +1,3 @@
-/* Root variables */
-:root {
-  --bs-primary: #262262;
-  --bs-link-color: #262262;
-}
-
-/* Components */
-.card {
-  --bs-card-border-radius: 0px;
-  --bs-card-bg: #fffbf0;
-}
-
 /* Custom */
 @font-face {
   font-family: "BarleyScript";
@@ -35,13 +23,14 @@
 
 body {
     background-image: url("../images/hardwood.jpg");
-    background-position: center;
+    background-position: top middle;
     background-repeat: repeat;
     background-clip: border-box;
 }
 
 a {
     color: #262262;
+    text-decoration: none;
 }
 
 .letter {
@@ -52,45 +41,126 @@ a {
   background-clip: border-box;
   border-radius: 3px;
   box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.25);
-  font-family: "BarleyScript", cursive;
-  font-size: 24pt;
+  font-family: "BarleyScriptTextured", cursive;
+  font-size: 1.9rem;
+  text-align: justify;
   color: #333333;
   position: relative;
+  margin-top: 50px;
 }
 
 .opener {
-  font-family: "FairyPlague", cursive;
-  font-size: 24pt;
-  transform: rotate(-10deg);
-  padding-bottom: 0px;
+  font-family: "BarleyScriptTextured", cursive;
+  font-size: 2rem;
+  margin: 0;
+  margin-top: 10px;
 }
 
 .signature {
   text-align: right;
-  font-family: "BarleyScript", cursive;
+  font-family: "BarleyScriptTextured", cursive;
   font-size: 32pt;
   padding-right: 25px;
   transform: rotate(2deg);
 }
 
-.tag {
-  background-image: url("../images/page_paper.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-clip: border-box;
-  border-radius: 3px;
+.sig-caps {
+  font-size: 36pt;
+}
+
+.tag-holder {
+  background-color: black;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  margin-top: 10px;
+  border-radius: 2px;
   box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.25);
-  font-family: "FairyPlague", cursive;
+}
+
+.tag {
+  font-family: "FairyPlague", serif;
   font-size: 16pt;
   line-height: normal;
   color: #262262;
+  background-position: center;
+  background-size: cover;
+  background-clip: border-box;
+  display: block;
+  padding: 10px;
 }
 
-.thumbtack{
+.t1 {
+  background-image: url("../images/paper-14.jpg");
+}
+
+.t2 {
+  background-image: url("../images/paper-15.jpg");
+}
+
+.t3 {
+  background-image: url("../images/paper-16.jpg");
+}
+
+.t1-text:hover {
+  background-image: none;
+  opacity: 0;
+}
+
+.t1-text {
+  position: relative;
+  z-index: 2;
+}
+
+.t1-text:hover {
+}
+
+.t1-alt {
+  background-image: none;
+  color: white;
+  display: block;
+  width: 100%;
+  position: absolute;
+  top:0;
+  z-index: 1;
+}
+
+.t1-alt:hover {
+}
+
+.thumbtack {
   position: absolute;
   width:100%;
   top: 5px;
   left: 0px;
-  z-index: 10;
+}
+
+.btn-black {
+  background-color: black;
+  color: white;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btn-black:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid;
+  border-bottom: 0px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+[button-theme="sans-serif"] a {
+  text-decoration: underline;
+}
+
+[button-theme="sans-serif"] .btn-black {
+  background-color: white;
+  color: black;
+}
+
+[button-theme="sans-serif"] .letter, [button-theme="sans-serif"] .tag,
+[button-theme="sans-serif"] .opener, [button-theme="sans-serif"] .signature {
+  font-family: "Calibri", sans-serif;
 }
