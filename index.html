@@ -20,27 +20,34 @@
             <div class="col">
             </div>
             <div class="col-10 col-md-6 p-3 m-3">
-              <div class="text-center m-3">
+              <div class="text-center m-3" style="position:relative;">
+                <img
+                  src="images/raven-eye.png"
+                  id="eye"
+                  style="width:7.5%;"
+                >
                 <img
                   src="images/ravencameo.png"
                   class="img-fluid w-75"
+                  id="anchor"
                   alt="A dashing raven with a top hat sits inside a cameo."
                 >
               </div>
 
-              <div class="text-start p-4 w-75 mx-auto letter">
+              <div class="text-start p-4 w-100 mx-auto letter">
                 <div class="thumbtack text-center">
                   <img
                     src="images/thumbtack.png"
                     width="20px"
                     class="mx-auto"
+                    alt="A thumbtack holds up a piece of paper."
                   >
                 </div>
                 <div class="text-center">
                   <img
                     src="images/raventablemanor_logo.png"
                     class="img-fluid w-75 m-3"
-                    alt="RavenTable Manor"
+                    alt="The words 'RavenTable Manor' in letterhead."
                   >
                 </div>
                 <div class="text-start">
@@ -113,13 +120,34 @@
     <script src="js/bootstrap.min.js"></script>
     <script>
       document.getElementById('themeToggle').addEventListener('click', () => {
-      const htmlElement = document.documentElement;
-      const currentTheme = htmlElement.getAttribute('button-theme');
-
-      // Switch the theme attribute
-      const newTheme = currentTheme === 'sans-serif' ? 'normal' : 'sans-serif';
-      htmlElement.setAttribute('button-theme', newTheme);
+        const htmlElement = document.documentElement;
+        const currentTheme = htmlElement.getAttribute('button-theme');
+        const newTheme = currentTheme === 'sans-serif' ? 'normal' : 'sans-serif';
+        htmlElement.setAttribute('button-theme', newTheme);
       });
+
+      const eye = document.getElementById('eye')
+      const anchor = document.getElementById('anchor')
+      const rekt = anchor.getBoundingClientRect();
+      const anchorx = rekt.left + rekt.width / 2;
+      const anchory = rekt.top + rekt.height / 2;
+
+      document.addEventListener('mousemove', (e) => {
+        const mousex = e.clientX;
+        const mousey = e.clientY;
+        const angleDeg = angle(mousex, mousey, anchorx, anchory);
+        console.log(angleDeg)
+
+        eye.style.transform = `rotate(${195 + angleDeg}deg)` ;
+      });
+
+      function angle(cx, cy, ex, ey) {
+        const dy = ey - cy;
+        const dx = ex - cx;
+        const rad = Math.atan2(dy, dx); // range (-PI, PI]
+        const deg = rad * 180 / Math.PI; // rads to degs, range (-180, 180]
+        return deg;
+      }
     </script>
   </body>
 </html>
