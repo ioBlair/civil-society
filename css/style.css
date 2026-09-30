@@ -33,6 +33,12 @@ a {
     text-decoration: none;
 }
 
+#eye {
+  position: absolute;
+  top: 43.5%;
+  left: 44.5%;
+}
+
 .letter {
   background-image: url("../images/page_paper.jpg");
   background-position: center;
@@ -51,9 +57,10 @@ a {
 
 .opener {
   font-family: "BarleyScriptTextured", cursive;
-  font-size: 2rem;
+  font-size: 2.1rem;
   margin: 0;
-  margin-top: 10px;
+  margin-top: 25px;
+  margin-bottom: 5px;
 }
 
 .signature {
