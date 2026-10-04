@@ -22,10 +22,12 @@
 }
 
 body {
-    background-image: url("../images/hardwood.jpg");
-    background-position: top middle;
-    background-repeat: repeat;
-    background-clip: border-box;
+    background-image: url("../images/paper-9.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed; /* Keeps the background locked in place */
+    background-size: cover;       /* Scales the image to fill the screen */
+    min-height: 100vh;
 }
 
 a {
@@ -35,29 +37,122 @@ a {
 
 #eye {
   position: absolute;
-  width:10.5%;
-  top: 43%;
-  left: 41.5%;
+  width: 8%;
+  top: 40%;
+  left: 44.5%;
+  z-index: 1;
+}
+
+#anchor {
+  z-index: 5;
+}
+
+#thumbtack {
+  position: absolute;
+  width:100%;
+  top: 50px;
+  left: 0px;
+}
+
+.raven-box {
+  position:relative;
+}
+
+.title {
+  border-bottom: 4px solid;
+  border-color: black;
+  border-image:
+    linear-gradient(to right, transparent, black, black, black, transparent) 1;
+  font-family: "BarleyScriptTextured", cursive;
+  font-size: 6rem;
+  color: #333333;
+  line-height: normal;
+}
+
+.title .the {
+  font-family: "FairyPlague", serif;
+  font-size: 3rem;
+  position: relative;
+  top: 25px;
+}
+
+.divider {
+  border-bottom: 4px solid;
+  border-color: black;
+  border-image:
+    linear-gradient(to right, transparent, black, black, black, transparent) 1;
+}
+
+.dark-corners {
+  background-image: radial-gradient(ellipse at center, transparent 80%, transparent, black);
+}
+
+.bx-shdw {
+  margin-top: 50px;
+  box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+.gradient-box {
+  margin: 5px;
+  position: relative;
+  padding: 20px;
+}
+
+.gradient-box::before,
+.gradient-box::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 5px;
+  pointer-events: none;
+}
+
+.gradient-box::before {
+  padding: 0 0 4px 0;
+  background: linear-gradient(to right, transparent, black, black, black, transparent);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+}
+
+.gradient-box::after {
+  padding: 0 0 0 4px;
+  background: linear-gradient(to bottom, transparent, black, black, black, transparent);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+}
+
+
+.right-column .gradient-box::after {
+  padding: 0 4px 0 4px;
+}
+
+.sm-bx-shdw {
+  margin-top: 10px;
+  border-radius: 2px;
+  box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.25);
 }
 
 .letter {
-  background-image: url("../images/page_paper.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-clip: border-box;
   border-radius: 3px;
-  box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.25);
-  font-family: "BarleyScriptTextured", cursive;
+  font-family:  "FairyPlague", serif;
   font-size: 1.9rem;
   text-align: justify;
   color: #333333;
   position: relative;
-  margin-top: 50px;
 }
 
 .opener {
-  font-family: "BarleyScriptTextured", cursive;
+  font-family:  "FairyPlague", serif;
   font-size: 2.1rem;
   margin: 0;
   margin-top: 25px;
@@ -81,9 +176,6 @@ a {
   position: relative;
   margin: auto;
   overflow: hidden;
-  margin-top: 10px;
-  border-radius: 2px;
-  box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.25);
 }
 
 .tag {
@@ -96,6 +188,36 @@ a {
   background-clip: border-box;
   display: block;
   padding: 10px;
+}
+
+.frame-container {
+  position: relative;
+}
+
+.frame-box {
+  position: absolute;
+  top: 0;
+  clip-path: ellipse(45% 45% at 50% 50%);
+  z-index:1;
+  overflow: visible;
+  background-color: black;
+  background-position: center;
+  background-size: cover;
+  margin: auto;
+}
+
+.frame {
+  overflow: hidden;
+  display: block;
+}
+
+.fork {
+  background-image: url("../images/fork.jpg");
+  position: absolute;
+  top: 0;
+}
+
+.silverware {
 }
 
 .t1 {
@@ -136,27 +258,21 @@ a {
 .t1-alt:hover {
 }
 
-.thumbtack {
-  position: absolute;
-  width:100%;
-  top: 5px;
-  left: 0px;
-}
-
 .btn-black {
   background-color: black;
   color: white;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  border-top: 0px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .btn-black:hover {
   background-color: white;
   color: black;
   border: 1px solid;
-  border-bottom: 0px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  border-top: 0px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 [button-theme="sans-serif"] a {
@@ -169,6 +285,27 @@ a {
 }
 
 [button-theme="sans-serif"] .letter, [button-theme="sans-serif"] .tag,
-[button-theme="sans-serif"] .opener, [button-theme="sans-serif"] .signature {
+[button-theme="sans-serif"] .opener, [button-theme="sans-serif"] .signature,
+[button-theme="sans-serif"] .title, [button-theme="sans-serif"] .the {
   font-family: "Calibri", sans-serif;
+}
+
+@include media-breakpoint-down(sm) {
+.gradient-box {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    /* Default / Desktop padding */
+    padding: 0 2px;
+
+    /* Mobile-only padding (<576px) */
+    @include media-breakpoint-down(sm) {
+      padding: 0 4px;
+    }
+  }
 }
