@@ -28,11 +28,27 @@ body {
     background-attachment: fixed; /* Keeps the background locked in place */
     background-size: cover;       /* Scales the image to fill the screen */
     min-height: 100vh;
+    font-family: "FairyPlague", serif;
+    font-size: 1.2rem;
 }
 
 a {
     color: #262262;
     text-decoration: none;
+}
+
+ul {
+  color: #262262;
+  font-size: 1.5rem;
+  list-style-type: decimal;
+  margin: 10px;
+  margin-top: 0;
+  padding-bottom: 15px;
+}
+
+p {
+  color: #000000;
+  font-size: 1.6em;
 }
 
 #eye {
@@ -87,11 +103,6 @@ a {
   background-image: radial-gradient(ellipse at center, transparent 80%, transparent, black);
 }
 
-.bx-shdw {
-  margin-top: 50px;
-  box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.25);
-}
-
 .gradient-box {
   margin: 5px;
   position: relative;
@@ -132,10 +143,15 @@ a {
   padding: 0 4px 0 4px;
 }
 
-.sm-bx-shdw {
+.box-shadow {
+  margin-top: 50px;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.sm-box-shadow {
   margin-top: 10px;
   border-radius: 2px;
-  box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 .letter {
@@ -154,7 +170,6 @@ a {
 .opener {
   font-family:  "FairyPlague", serif;
   font-size: 2.1rem;
-  margin: 0;
   margin-top: 25px;
   margin-bottom: 5px;
 }
@@ -220,16 +235,23 @@ a {
 .silverware {
 }
 
+.t0 {
+  background-image: url("../images/paper-9.jpg");
+}
+
 .t1 {
   background-image: url("../images/paper-14.jpg");
+  background-position: center;
 }
 
 .t2 {
   background-image: url("../images/paper-15.jpg");
+  background-position: center;
 }
 
 .t3 {
   background-image: url("../images/paper-16.jpg");
+  background-position: center;
 }
 
 .t1-text:hover {
@@ -264,6 +286,7 @@ a {
   border-top: 0px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+  font-family: sans-serif;
 }
 
 .btn-black:hover {
