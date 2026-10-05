@@ -213,7 +213,7 @@ p {
 .frame-box {
   position: absolute;
   top: 0;
-  clip-path: ellipse(35% 45% at 50% 50%);
+  clip-path: ellipse(40% 35% at 50% 42%);
   z-index:1;
   overflow: visible;
   background-color: black;
@@ -229,6 +229,7 @@ p {
 
 .fork {
   background-image: url("../images/fork.jpg");
+  background-position: top;
   position: absolute;
   top: 0;
 }
@@ -326,6 +327,13 @@ p {
 [button-theme="sans-serif"] .opener, [button-theme="sans-serif"] .signature,
 [button-theme="sans-serif"] .title, [button-theme="sans-serif"] .the {
   font-family: "Calibri", sans-serif;
+}
+
+[button-theme="sans-serif"] .t1, [button-theme="sans-serif"] .t2,
+[button-theme="sans-serif"] .t3, [button-theme="sans-serif"] .letter,
+[button-theme="sans-serif"] .title, [button-theme="sans-serif"] body {
+  background-image: none;
+  background-color: white;
 }
 
 @include media-breakpoint-down(sm) {
