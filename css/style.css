@@ -22,11 +22,11 @@
 }
 
 body {
-    background-image: url("../images/paper-9.jpg");
+    background-image: url("../images/paper-7.jpg");
     background-repeat: no-repeat;
     background-position: center center;
-    background-attachment: fixed; /* Keeps the background locked in place */
-    background-size: cover;       /* Scales the image to fill the screen */
+    background-attachment: fixed;
+    background-size: cover;
     min-height: 100vh;
     font-family: "FairyPlague", serif;
     font-size: 1.2rem;
@@ -159,7 +159,6 @@ p {
   background-repeat: no-repeat;
   background-size: cover;
   background-clip: border-box;
-  border-radius: 3px;
   font-family:  "FairyPlague", serif;
   font-size: 1.9rem;
   text-align: justify;
@@ -191,18 +190,20 @@ p {
   position: relative;
   margin: auto;
   overflow: hidden;
+  border-radius: 3px;
 }
 
 .tag {
   font-family: "FairyPlague", serif;
   font-size: 16pt;
   line-height: normal;
-  color: #262262;
+  color: #000000;
   background-position: center;
   background-size: cover;
   background-clip: border-box;
   display: block;
   padding: 10px;
+  border-radius: 3px;
 }
 
 .frame-container {
@@ -212,7 +213,7 @@ p {
 .frame-box {
   position: absolute;
   top: 0;
-  clip-path: ellipse(45% 45% at 50% 50%);
+  clip-path: ellipse(35% 45% at 50% 50%);
   z-index:1;
   overflow: visible;
   background-color: black;
@@ -236,22 +237,35 @@ p {
 }
 
 .t0 {
-  background-image: url("../images/paper-9.jpg");
+  background-image: url("../images/paper-15.jpg");
+  border-radius: 3px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .t1 {
   background-image: url("../images/paper-14.jpg");
+  border-radius: 3px;
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .t2 {
-  background-image: url("../images/paper-15.jpg");
+  background-image: url("../images/paper-9.jpg");
+  border-radius: 3px;
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: center;
 }
 
 .t3 {
   background-image: url("../images/paper-16.jpg");
+  border-radius: 3px;
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .t1-text:hover {
@@ -307,6 +321,7 @@ p {
   color: black;
 }
 
+[button-theme="sans-serif"] body,
 [button-theme="sans-serif"] .letter, [button-theme="sans-serif"] .tag,
 [button-theme="sans-serif"] .opener, [button-theme="sans-serif"] .signature,
 [button-theme="sans-serif"] .title, [button-theme="sans-serif"] .the {
