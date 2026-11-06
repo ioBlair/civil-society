@@ -37,10 +37,19 @@ a {
     text-decoration: none;
 }
 
-ul {
+ol {
   color: #262262;
   font-size: 1.5rem;
   list-style-type: decimal;
+  margin: 10px;
+  margin-top: 0;
+  padding-bottom: 15px;
+}
+
+ul {
+  color: #262262;
+  font-size: 1.5rem;
+  list-style-type: ;
   margin: 10px;
   margin-top: 0;
   padding-bottom: 15px;
