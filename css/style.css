@@ -21,6 +21,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Fraunces';
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('../fonts/Fraunces--latin_basic.woff2') format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
 body {
     background-image: url("../images/paper-7.jpg");
     background-repeat: no-repeat;
@@ -28,7 +36,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     min-height: 100vh;
-    font-family: "FairyPlague", serif;
+    font-family: "Fraunces", serif;
     font-size: 1.2rem;
 }
 
@@ -39,25 +47,19 @@ a {
 
 ol {
   color: #262262;
-  font-size: 1.5rem;
   list-style-type: decimal;
-  margin: 10px;
-  margin-top: 0;
-  padding-bottom: 15px;
+  margin-left: 6px;
 }
 
 ul {
   color: #262262;
-  font-size: 1.5rem;
   list-style-type: ;
-  margin: 10px;
-  margin-top: 0;
-  padding-bottom: 15px;
+  margin: 5px;
 }
 
 p {
   color: #000000;
-  font-size: 1.6em;
+  padding: 5px;
 }
 
 #eye {
@@ -75,7 +77,7 @@ p {
 #thumbtack {
   position: absolute;
   width:100%;
-  top: 50px;
+  top: 5px;
   left: 0px;
 }
 
@@ -92,6 +94,10 @@ p {
   font-size: 6rem;
   color: #333333;
   line-height: normal;
+}
+
+h1, h2, h3, h4 {
+    font-family: "FairyPlague", cursive;
 }
 
 .title .the {
@@ -113,9 +119,7 @@ p {
 }
 
 .gradient-box {
-  margin: 5px;
   position: relative;
-  padding: 20px;
 }
 
 .gradient-box::before,
@@ -137,8 +141,8 @@ p {
           mask-composite: exclude;
 }
 
-.gradient-box::after {
-  padding: 0 0 0 4px;
+.full-box::after {
+  padding: 0 4px 0 4px;
   background: linear-gradient(to bottom, transparent, black, black, black, transparent);
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
@@ -147,23 +151,36 @@ p {
           mask-composite: exclude;
 }
 
+.right-box::after {
+  padding: 0 4px 0 0px;
+  background: linear-gradient(to bottom, transparent, black, black, black, transparent);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+}
 
-.right-column .gradient-box::after {
-  padding: 0 4px 0 4px;
+.left-box::after {
+  padding: 0 0px 0 4px;
+  background: linear-gradient(to bottom, transparent, black, black, black, transparent);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
 }
 
 .box-shadow {
-  margin-top: 50px;
   box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.5);
 }
 
 .sm-box-shadow {
-  margin-top: 10px;
   border-radius: 2px;
   box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
-.letter {
+#letter {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -173,6 +190,10 @@ p {
   text-align: justify;
   color: #333333;
   position: relative;
+}
+
+.glow {
+    box-shadow: 0px 0px 10px green;
 }
 
 .opener {
@@ -194,6 +215,23 @@ p {
   font-size: 36pt;
 }
 
+#recipe {
+  border:3px white;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+#recipe-title {
+    font-family: "BarleyScriptTextured", cursive;
+}
+
+#recipe-card {
+    display: none;
+}
+#recipe:hover > #recipe-card {
+    display: block; 
+}
+
 .tag-holder {
   background-color: black;
   position: relative;
@@ -213,6 +251,7 @@ p {
   display: block;
   padding: 10px;
   border-radius: 3px;
+  text-align:center;
 }
 
 .frame-container {
@@ -223,7 +262,6 @@ p {
   position: absolute;
   top: 0;
   clip-path: ellipse(40% 35% at 50% 42%);
-  z-index:1;
   overflow: visible;
   background-color: black;
   background-position: center;
@@ -237,13 +275,14 @@ p {
 }
 
 .fork {
-  background-image: url("../images/fork.jpg");
+  background-image: url("../images/silver-roman-spork.jpeg");
   background-position: top;
   position: absolute;
   top: 0;
 }
 
-.silverware {
+.fork:hover {
+  background-image: url("../images/silver-roman-spork-flip.jpeg");
 }
 
 .t0 {
@@ -267,7 +306,7 @@ p {
   border-radius: 3px;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: center;
+  background-size: cover;
 }
 
 .t3 {
@@ -295,7 +334,6 @@ p {
   background-image: none;
   color: white;
   display: block;
-  width: 100%;
   position: absolute;
   top:0;
   z-index: 1;
@@ -331,18 +369,34 @@ p {
   color: black;
 }
 
-[button-theme="sans-serif"] body,
-[button-theme="sans-serif"] .letter, [button-theme="sans-serif"] .tag,
+[button-theme="sans-serif"] body, [button-theme="sans-serif"] h1, [button-theme="sans-serif"] h2, 
+[button-theme="sans-serif"] h3, [button-theme="sans-serif"] h4, [button-theme="sans-serif"] p,
+[button-theme="sans-serif"] #letter, [button-theme="sans-serif"] .tag,
 [button-theme="sans-serif"] .opener, [button-theme="sans-serif"] .signature,
 [button-theme="sans-serif"] .title, [button-theme="sans-serif"] .the {
   font-family: "Calibri", sans-serif;
 }
 
 [button-theme="sans-serif"] .t1, [button-theme="sans-serif"] .t2,
-[button-theme="sans-serif"] .t3, [button-theme="sans-serif"] .letter,
+[button-theme="sans-serif"] .t3, [button-theme="sans-serif"] #letter,
 [button-theme="sans-serif"] .title, [button-theme="sans-serif"] body {
   background-image: none;
   background-color: white;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ban-stagger.ban-play .ban-item { animation: ban-rise .6s cubic-bezier(.22, 1, .36, 1) both; animation-delay: calc(var(--ban-i) * 130ms); }
+  @keyframes ban-rise {
+    from { opacity: 50; transform: translateY(.9rem); }
+  }
+}
+
+.ban-lift:hover, .ban-lift:focus-within { box-shadow: var(--bs-box-shadow-lg) !important; }
+.ban-lift:focus-within { outline: 2px solid var(--bs-primary); outline-offset: 3px; }
+.ban-lift .stretched-link:focus-visible { outline: none; box-shadow: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .ban-lift { transition: transform .25s cubic-bezier(.36, 1, .36, 1), box-shadow .25s ease; }
+  .ban-lift:hover, .ban-lift:focus-within { transform: translateY(-6px); }
 }
 
 @include media-breakpoint-down(sm) {
