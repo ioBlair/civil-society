@@ -63,15 +63,10 @@ p {
 }
 
 #eye {
-  position: absolute;
-  width: 8%;
-  top: 40%;
-  left: 44.5%;
-  z-index: 1;
+  width: 80%;
 }
 
 #anchor {
-  z-index: 5;
 }
 
 #thumbtack {
@@ -80,6 +75,39 @@ p {
   top: 5px;
   left: 0px;
 }
+
+
+
+.center {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: gray;
+  display:none;
+}
+
+.track {
+  width: 20px;
+  height: 20px;
+  background: rgb(13, 88, 134);
+  border-radius: 50%;
+}
+
+.grabber {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+
 
 .raven-box {
   position:relative;
@@ -112,6 +140,10 @@ h1, h2, h3, h4 {
   border-color: black;
   border-image:
     linear-gradient(to right, transparent, black, black, black, transparent) 1;
+}
+
+.glow-round {
+	background: radial-gradient(circle, green 60%, transparent 70%, transparent 100%);
 }
 
 .dark-corners {
@@ -269,6 +301,11 @@ h1, h2, h3, h4 {
   margin: auto;
 }
 
+.wiggling {
+  animation-name: wiggle;
+  animation-duration: 1s;
+}
+  
 .frame {
   overflow: hidden;
   display: block;
@@ -283,6 +320,21 @@ h1, h2, h3, h4 {
 
 .fork:hover {
   background-image: url("../images/silver-roman-spork-flip.jpeg");
+}
+
+.teabag {
+	margin:auto;
+	padding-top:5%;
+	min-height:12em;
+  -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 25%, 75% 0);
+  clip-path: polygon(25% 0%, 0% 25%, 0 100%, 100% 100%, 100% 25%, 75% 0);
+  background: white;
+	border-radius:10px;
+}
+.teabag h1, .teabag h2 {
+	margin:auto;
+	width:75%;
+    font-family: "BarleyScriptTextured", cursive;
 }
 
 .t0 {
@@ -382,6 +434,24 @@ h1, h2, h3, h4 {
 [button-theme="sans-serif"] .title, [button-theme="sans-serif"] body {
   background-image: none;
   background-color: white;
+  border:2px solid black;
+}
+
+
+#recipe {
+	background-color:white;
+	color:black;
+}
+
+[button-theme="sans-serif"] #recipe, [button-theme="sans-serif"] #recipe ol, [button-theme="sans-serif"] #recipe ul {
+	background-color:black;
+	color:white;
+}
+
+[button-theme="sans-serif"] .title {
+    border-top:0;
+    border-left:0;
+    border-right:0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -390,6 +460,18 @@ h1, h2, h3, h4 {
     from { opacity: 50; transform: translateY(.9rem); }
   }
 }
+
+@keyframes wiggle {
+  0%   {transform: rotate(1deg); transform-origin: 50% 10px;}
+  25%  {transform: rotate(-0.9deg); transform-origin: 50% 10px;}
+  50%  {transform: rotate(1.2deg); transform-origin: 50% 10px;}
+  75%  {transform: rotate(-1.1deg); transform-origin: 50% 10px;}
+  100% {transform: rotate(0.2deg); transform-origin: 50% 10px;}
+}
+
+.bounce {height:15px;}
+
+.my-lift {transform: translateY(-6px);}
 
 .ban-lift:hover, .ban-lift:focus-within { box-shadow: var(--bs-box-shadow-lg) !important; }
 .ban-lift:focus-within { outline: 2px solid var(--bs-primary); outline-offset: 3px; }
